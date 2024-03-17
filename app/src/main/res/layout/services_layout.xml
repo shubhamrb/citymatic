@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeFragmentView"
+            type="com.mamits.citymatic.viewmodel.fragment.HomeFragmentViewModel" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Featured Services"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:fontName="Poppins-Medium.ttf" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="3"
+            tools:listitem="@layout/featured_service_item_list" />
+    </LinearLayout>
+</layout>

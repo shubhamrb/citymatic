@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@drawable/coupon_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_20sdp"
+        android:paddingVertical="@dimen/_30sdp"
+        app:layout_constraintDimensionRatio="300:203"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_off_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="25% Off "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:fontName="Poppins-Medium.ttf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.mamits.citymatic.ui.customviews.CustomTextViewHtml
+            android:id="@+id/txt_offer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:alpha="0.5"
+            android:singleLine="true"
+            android:text="use “WELCOME” to get 25% off upto $200 "
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Regular.ttf"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_off_rate" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_copy_coupon"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_68sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:strokeColor="@color/dim_gray"
+                app:strokeWidth="@dimen/_1sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_15sdp">
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:id="@+id/label_use"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="USE"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontName="Poppins-Regular.ttf"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:textAllCaps="true" />
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:id="@+id/txt_coupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NEW150X"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:fontName="Poppins-Medium.ttf"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/label_use"
+                        app:textAllCaps="true" />
+
+                    <View
+                        android:layout_width="@dimen/_1sdp"
+                        android:layout_height="match_parent"
+                        android:alpha="0.5"
+                        android:background="@color/black"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_copy"
+                        app:layout_constraintStart_toEndOf="@+id/txt_coupon" />
+
+                    <ImageView
+                        android:id="@+id/btn_copy"
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/clipboard_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_apply"
+                android:layout_width="@dimen/_73sdp"
+                android:layout_height="@dimen/_68sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="Apply"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

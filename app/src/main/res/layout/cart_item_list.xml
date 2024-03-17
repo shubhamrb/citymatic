@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dim_gray"
+        app:cardCornerRadius="@dimen/_5sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_10sdp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/bundle_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/color_orange"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="0dp">
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.5"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="BUNDLE"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+                </androidx.cardview.widget.CardView>
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/txt_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bundle_card"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="Bathroom Cleaning"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/package_type_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_product_name"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@color/gray"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="0dp">
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:id="@+id/txt_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:includeFontPadding="false"
+                        android:letterSpacing="0.5"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingTop="@dimen/_3sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:paddingBottom="@dimen/_3sdp"
+                        android:text="BASIC"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_8ssp"
+                        app:fontName="Poppins-Medium.ttf" />
+                </androidx.cardview.widget.CardView>
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/txt_total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/package_type_card"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:includeFontPadding="false"
+                    android:text="₹00"
+                    android:textColor="@color/color_orange"
+                    android:textSize="@dimen/_13ssp"
+                    app:fontName="Poppins-Bold.ttf" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <ImageView
+                        android:id="@+id/img_sub_cat"
+                        android:layout_width="@dimen/_147sdp"
+                        android:layout_height="@dimen/_95sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/poster" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_80sdp"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_20sdp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Add to cart"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontName="Poppins-Regular.ttf" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="For "
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_15ssp"
+                                app:fontName="Poppins-Bold.ttf" />
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:id="@+id/txt_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:text="₹00"
+                                android:textColor="@color/color_orange"
+                                android:textSize="@dimen/_15ssp"
+                                app:fontName="Poppins-Bold.ttf" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_plus_minus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btn_plus"
+                            android:layout_width="@dimen/_44sdp"
+                            android:layout_height="@dimen/_44sdp"
+                            android:backgroundTint="@color/black"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_34sdp"
+                                android:layout_height="@dimen/_34sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/cart_plus" />
+                        </androidx.cardview.widget.CardView>
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:id="@+id/txt_cart_count"
+                            android:layout_width="@dimen/_44sdp"
+                            android:layout_height="@dimen/_44sdp"
+                            android:gravity="center"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="1"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontName="Poppins-Medium.ttf" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btn_minus"
+                            android:layout_width="@dimen/_44sdp"
+                            android:layout_height="@dimen/_44sdp"
+                            android:backgroundTint="@color/black"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_34sdp"
+                                android:layout_height="@dimen/_34sdp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/cart_minus" />
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

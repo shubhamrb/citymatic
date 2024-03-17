@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mcv_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:gravity="center_vertical"
+    app:cardBackgroundColor="@color/dim_gray"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/dimen_0dp"
+    app:contentPadding="@dimen/_15sdp"
+    app:strokeColor="@color/dim_gray"
+    app:strokeWidth="0.5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/default_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/color_orange"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <com.mamits.citymatic.ui.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.4"
+                android:text="DEFAULT ADDRESS"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10ssp"
+                app:fontName="Poppins-Regular.ttf" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/type_card"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_45sdp"
+            app:cardBackgroundColor="@color/color_orange"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/type_icon"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/home"
+                    app:tint="@color/white" />
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="Home"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:singleLine="true"
+            android:text="Ravikant Verma"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold"
+            app:fontName="Poppins-Medium.ttf" />
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:drawableStart="@drawable/phone_icon"
+            android:drawablePadding="@dimen/_10sdp"
+            android:text="+19 8085553320\nboldamigo@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Regular.ttf" />
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/location"
+            android:drawablePadding="@dimen/_10sdp"
+            android:text="65, Near AB Road, Punjagutta, Hyderabad, Telangana, IN 500068"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Regular.ttf" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_edit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_58sdp"
+            android:layout_marginTop="30dp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Edit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_set_default"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_58sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_5sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="Set as Default"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp" />
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

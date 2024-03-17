@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dim_gray"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:strokeColor="@color/color_orange"
+        app:strokeWidth="@dimen/_1sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/txt_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/btn_radio"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="10:30 pm"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <RadioButton
+                    android:id="@+id/btn_radio"
+                    android:layout_width="@dimen/_34sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:buttonTint="@color/color_orange"
+                    android:clickable="false"
+                    android:includeFontPadding="false" />
+            </RelativeLayout>
+
+            <com.mamits.citymatic.ui.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:text="onwards"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11ssp"
+                app:fontName="Poppins-Regular.ttf" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>

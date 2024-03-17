@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1023255861996",
+    "project_id": "citymatic-44d41",
+    "storage_bucket": "citymatic-44d41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023255861996:android:a80953b85ae97c8bebe3c9",
+        "android_client_info": {
+          "package_name": "com.mamits.citymatic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsfiAdun9CJdjzK0Y82tvBR5eNqBwBSPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

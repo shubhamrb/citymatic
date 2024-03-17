@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Citymatic</string>
+    <string name="default_notification_channel_id">my_channel_02</string>
+    <string name="server_not_available" translatable="false">Server error</string>
+    <string name="check_internet_connection">Check your internet connection</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="log_out">Log out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="api_key">AIzaSyBqqRDGvGCxSP4cSi4kZseS6oeL-uU7SRg</string>
+    <string name="rupee">₹</string>
+    <string name="i_have_agree_terms_amp_conditions" translatable="false"><![CDATA[I Accept and agree with all of the <font color=#60BF00>Terms & Conditions</font> and <font color=#60BF00>Privacy Policies</font>.]]></string>
+    <string name="txt_rupee">₹</string>
+</resources>

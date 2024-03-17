@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeFragmentView"
+            type="com.mamits.citymatic.viewmodel.fragment.HomeFragmentViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:id="@+id/root_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <com.mamits.citymatic.ui.customviews.AutoScrollViewPager
+                    android:id="@+id/viewpager_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp" />
+
+                <include
+                    android:id="@+id/service_layout"
+                    layout="@layout/services_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/viewpager_banner"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    bind:homeFragmentView="@{homeFragmentView}" />
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/label_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/service_layout"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Categories"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/label_category"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/category_item_list" />
+
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/label_bundle_savers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/recyclerView_category"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Bundle Savers"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_bundle_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/label_bundle_savers"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/bundle_service_item_list" />
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/label_offer_for_you"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/recyclerView_bundle_service"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Offers! Only for you."
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <com.mamits.citymatic.ui.customviews.AutoScrollViewPager
+                    android:id="@+id/bottom_viewpager_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180sdp"
+                    android:layout_below="@+id/label_offer_for_you"
+                    android:layout_marginTop="@dimen/_10sdp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_offers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bottom_viewpager_banner"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/offers_item_list" />
+
+            </RelativeLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:visibility="gone">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/home_shimmer" />
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

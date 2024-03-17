@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="storeDetailView"
+            type="com.mamits.citymatic.viewmodel.fragment.StoreDetailFragmentViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_cart_layout"
+            android:background="@color/white"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/root_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/product_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_250sdp"
+                        android:scaleType="fitXY" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_20sdp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/bundle_card"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/color_orange"
+                            android:visibility="visible"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp">
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/_3sdp"
+                                android:includeFontPadding="false"
+                                android:letterSpacing="0.5"
+                                android:paddingStart="@dimen/_5sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:paddingEnd="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_3sdp"
+                                android:text="BUNDLE"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_10ssp"
+                                app:fontName="Poppins-Regular.ttf" />
+                        </androidx.cardview.widget.CardView>
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:id="@+id/txt_product_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/bundle_card"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="Bathroom Cleaning"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontName="Poppins-Medium.ttf" />
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:id="@+id/txt_sub_cat_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_product_name"
+                            android:includeFontPadding="false"
+                            android:singleLine="true"
+                            android:text="Starting from "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10ssp"
+                            app:fontName="Poppins-Regular.ttf" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/txt_sub_cat_price"
+                            android:backgroundTint="@color/white"
+                            app:cardCornerRadius="@dimen/_5sdp"
+                            app:cardElevation="0dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/_5sdp"
+                                android:paddingTop="@dimen/_3sdp"
+                                android:paddingEnd="@dimen/_5sdp"
+                                android:paddingBottom="@dimen/_3sdp">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_15sdp"
+                                    android:layout_height="@dimen/_15sdp"
+                                    android:src="@drawable/star"
+                                    app:tint="@color/color_orange" />
+
+                                <com.mamits.citymatic.ui.customviews.CustomTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_3sdp"
+                                    android:includeFontPadding="false"
+                                    android:text="4.5"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_10ssp"
+                                    app:fontName="Poppins-Regular.ttf" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/btn_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/_38sdp"
+                            android:layout_alignParentEnd="true"
+                            android:backgroundTint="@color/black"
+                            app:cardCornerRadius="@dimen/_5sdp">
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:paddingStart="@dimen/_12sdp"
+                                android:paddingEnd="@dimen/_12sdp"
+                                android:text="Add"
+                                android:textColor="@color/white" />
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:backgroundTint="@color/dim_gray"
+                        app:cardElevation="@dimen/dimen_0dp"
+                        app:contentPadding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:id="@+id/txt_plan_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:includeFontPadding="false"
+                                android:singleLine="true"
+                                android:text="Service includes"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                app:fontName="Poppins-Medium.ttf" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_plans"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/plans_item_list" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:backgroundTint="@color/dim_green"
+                        app:cardElevation="@dimen/dimen_0dp"
+                        app:contentPadding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:includeFontPadding="false"
+                                android:singleLine="true"
+                                android:text="Procedure"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                app:fontName="Poppins-Medium.ttf" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_procedure"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/procedure_item_list" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:backgroundTint="@color/white"
+                        app:cardElevation="@dimen/dimen_0dp"
+                        app:contentPadding="@dimen/_10sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <com.mamits.citymatic.ui.customviews.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:includeFontPadding="false"
+                                android:singleLine="true"
+                                android:text="FAQ"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12ssp"
+                                app:fontName="Poppins-Medium.ttf" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recycler_faq"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                tools:itemCount="2"
+                                tools:listitem="@layout/faq_item_list" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/home_shimmer" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottom_cart_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rl_total_cart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_44sdp"
+                android:background="@color/black"
+                android:paddingStart="@dimen/_25sdp"
+                android:paddingEnd="@dimen/_25sdp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/cart_icon" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:orientation="horizontal">
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="Cart Total "
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontName="Poppins-Regular.ttf" />
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:id="@+id/txt_total_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="₹250"
+                            android:textColor="@color/color_orange"
+                            android:textSize="@dimen/_12ssp"
+                            app:fontName="Poppins-Medium.ttf" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow_right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:paddingStart="@dimen/_25sdp"
+                android:paddingEnd="@dimen/_25sdp">
+
+                <LinearLayout
+                    android:id="@+id/ll_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:text="Add to cart"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="For "
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontName="Poppins-Bold.ttf" />
+
+                        <com.mamits.citymatic.ui.customviews.CustomTextView
+                            android:id="@+id/txt_price"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:includeFontPadding="false"
+                            android:text="₹250"
+                            android:textColor="@color/color_orange"
+                            android:textSize="@dimen/_15ssp"
+                            app:fontName="Poppins-Bold.ttf" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_add_to_cart"
+                    android:layout_width="@dimen/_44sdp"
+                    android:layout_height="@dimen/_44sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@color/black"
+                    android:visibility="visible"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/cart_icon" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/ll_plus_minus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_plus"
+                        android:layout_width="@dimen/_44sdp"
+                        android:layout_height="@dimen/_44sdp"
+                        android:backgroundTint="@color/black"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_34sdp"
+                            android:layout_height="@dimen/_34sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/cart_plus" />
+                    </androidx.cardview.widget.CardView>
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:id="@+id/txt_cart_count"
+                        android:layout_width="@dimen/_44sdp"
+                        android:layout_height="@dimen/_44sdp"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:singleLine="true"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:fontName="Poppins-Medium.ttf" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/btn_minus"
+                        android:layout_width="@dimen/_44sdp"
+                        android:layout_height="@dimen/_44sdp"
+                        android:backgroundTint="@color/black"
+                        app:cardCornerRadius="@dimen/_5sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_34sdp"
+                            android:layout_height="@dimen/_34sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/cart_minus" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

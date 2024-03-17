@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.mamits.citymatic.ui.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.mamits.citymatic.ui.fragment.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+
+    <fragment
+        android:id="@+id/nav_all_subcategory"
+        android:name="com.mamits.citymatic.ui.fragment.AllSubcategoryFragment"
+        tools:layout="@layout/fragment_all_subcategory" />
+
+    <fragment
+        android:id="@+id/nav_store_detail"
+        android:name="com.mamits.citymatic.ui.fragment.StoreDetailFragment"
+        tools:layout="@layout/fragment_store_detail" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.mamits.citymatic.ui.fragment.NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.mamits.citymatic.ui.fragment.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/nav_change_pass"
+        android:name="com.mamits.citymatic.ui.fragment.ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_password" />
+
+    <fragment
+        android:id="@+id/nav_update_profile"
+        android:name="com.mamits.citymatic.ui.fragment.UpdateProfileFragment"
+        tools:layout="@layout/fragment_update_profile" />
+
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.mamits.citymatic.ui.fragment.CartFragment"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/nav_schedule_booking"
+        android:name="com.mamits.citymatic.ui.fragment.ScheduleBookingFragment"
+        tools:layout="@layout/fragment_schedule_booking" />
+
+    <fragment
+        android:id="@+id/nav_order_summary"
+        android:name="com.mamits.citymatic.ui.fragment.OrderSummaryFragment"
+        tools:layout="@layout/fragment_order_summary" />
+
+    <fragment
+        android:id="@+id/nav_order_details"
+        android:name="com.mamits.citymatic.ui.fragment.OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details" />
+
+    <fragment
+        android:id="@+id/nav_address"
+        android:name="com.mamits.citymatic.ui.fragment.AddressFragment"
+        tools:layout="@layout/fragment_address" />
+</navigation>

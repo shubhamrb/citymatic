@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:backgroundTint="@color/pink_fff7f2"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/dimen_0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="@dimen/_15sdp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/img_offer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toStartOf="@id/img_next"
+            android:layout_toEndOf="@id/card">
+
+            <com.mamits.citymatic.ui.customviews.CustomTextView
+
+                android:id="@+id/txt_offer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25% Off on first 3 bookings"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:fontName="Poppins-Medium.ttf" />
+
+            <com.mamits.citymatic.ui.customviews.CustomTextViewHtml
+                android:id="@+id/txt_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_offer_name"
+                android:alpha="0.7"
+                android:maxLines="2"
+                android:text="use “WELCOME” to get 25% off upto $200 "
+                android:textColor="@color/black_2a2a2a"
+                android:textSize="@dimen/_10ssp" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/img_next"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_right_icon" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/_10sdp"
+    android:background="@color/dim_green"
+    android:paddingStart="@dimen/dimen_0dp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingEnd="@dimen/_10sdp"
+    android:paddingBottom="@dimen/_10sdp">
+
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ll_procedure"
+        android:src="@drawable/procedure_arrow_icon" />
+
+    <LinearLayout
+        android:id="@+id/ll_procedure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_toEndOf="@+id/img_arrow"
+        android:orientation="vertical">
+
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_number"
+            android:layout_width="@dimen/_36sdp"
+            android:layout_height="@dimen/_36sdp"
+            android:background="@drawable/circle_box"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:padding="@dimen/_5sdp"
+            android:text="01"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Medium.ttf" />
+
+        <com.mamits.citymatic.ui.customviews.CustomTextView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:includeFontPadding="false"
+            android:singleLine="true"
+            android:text="Removal of objects"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Medium.ttf" />
+
+
+        <com.mamits.citymatic.ui.customviews.CustomTextViewHtml
+            android:id="@+id/txt_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:alpha="0.6"
+            android:includeFontPadding="false"
+            android:text="Create and edit text documents directly in your browser – no dedicated software required. Several people can work at the same time, and every change is saved automatically."
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:fontName="Poppins-Regular.ttf" />
+    </LinearLayout>
+
+</RelativeLayout>
