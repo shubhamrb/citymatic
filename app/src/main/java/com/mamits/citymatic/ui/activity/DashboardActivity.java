@@ -403,6 +403,7 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
             binding.navView.setVisibility(View.VISIBLE);
             binding.toolbar.toolbar.setVisibility(View.VISIBLE);
         } else if (destination.getId() == R.id.nav_history
+                || destination.getId() == R.id.nav_review
                 || destination.getId() == R.id.nav_notification
                 || destination.getId() == R.id.nav_profile) {
             binding.navView.setVisibility(View.VISIBLE);
@@ -411,6 +412,10 @@ public class DashboardActivity extends BaseActivity<ActivityDashboardBinding, Da
             binding.navView.setVisibility(View.GONE);
             binding.toolbar.toolbar.setVisibility(View.GONE);
         }
+    }
+
+    public void hideBottomNav(boolean isHide) {
+        binding.navView.setVisibility(isHide ? View.GONE : View.VISIBLE);
     }
 
     @Override

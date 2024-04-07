@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="selected"
+            type="Boolean" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:cardBackgroundColor="@{selected ? @color/dim_green : @color/dim_gray}"
+        app:cardCornerRadius="@dimen/_5sdp"
+        app:strokeColor="@{selected ? @color/color_orange : @color/dim_gray}"
+        app:strokeWidth="@dimen/_1sdp"
+        tools:cardBackgroundColor="@color/dim_gray">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/img_card"
+                android:orientation="vertical">
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/txt_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="Bathroom Cleaning"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:alpha="0.5"
+                    android:includeFontPadding="false"
+                    android:singleLine="true"
+                    android:text="Jan 01, 2023 | 01:00 pm"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:fontName="Poppins-Medium.ttf" />
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/img_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <ImageView
+                    android:id="@+id/img_sub_cat"
+                    android:layout_width="@dimen/_147sdp"
+                    android:layout_height="@dimen/_95sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/poster" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

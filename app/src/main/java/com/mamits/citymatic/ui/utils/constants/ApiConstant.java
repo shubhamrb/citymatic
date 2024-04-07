@@ -22,7 +22,7 @@ public class ApiConstant {
     public static final String STORE_DETAIL_END_POINT = BuildConfig.BASE_URL + "api/getStoreDetail";
     public static final String COUPON_LIST_END_POINT = BuildConfig.BASE_URL + "api/auth/couponList";
     public static final String FETCH_MESSAGES_END_POINT = BuildConfig.BASE_URL + "api/auth/getChatList";
-    public static final String SEND_MESSAGE_END_POINT = BuildConfig.BASE_URL + "api/auth/saveChat";
+    public static final String POST_REVIEW_END_POINT = BuildConfig.BASE_URL + "api/auth/reviewRatting";
     public static final String FETCH_NOTIFICATION_END_POINT = BuildConfig.BASE_URL + "api/auth/getNotificationList";
     public static final String FETCH_PRODUCT_DETAIL_END_POINT = BuildConfig.BASE_URL + "api/getProductDetail";
     public static final String ADD_TO_CART_END_POINT = BuildConfig.BASE_URL + "api/auth/addToCart";
@@ -32,7 +32,10 @@ public class ApiConstant {
     public static final String FETCH_SUBCATEGORY_END_POINT = BuildConfig.BASE_URL + "api/getStoreByCategory";
     public static final String FETCH_CART_END_POINT = BuildConfig.BASE_URL + "api/auth/getCartItems";
     public static final String FETCH_ADDRESS_END_POINT = BuildConfig.BASE_URL + "api/auth/addressList";
+    public static final String FETCH_PUBLIC_REVIEWS_END_POINT = BuildConfig.BASE_URL + "api/getReviewRatting";
+    public static final String FETCH_MY_REVIEWS_END_POINT = BuildConfig.BASE_URL + "api/auth/getReviewRatting";
     public static final String SET_DEFAULT_ADDRESS_END_POINT = BuildConfig.BASE_URL + "api/auth/setDefaultAddress";
+    public static final String DELETE_REVIEW_END_POINT = BuildConfig.BASE_URL + "api/auth/deleteRatting";
     public static final String FETCH_BOOKING_DATES_END_POINT = BuildConfig.BASE_URL + "api/timeSlotList";
     public static final String FETCH_ORDER_SUMMARY_END_POINT = BuildConfig.BASE_URL + "api/auth/cartDetail";
     public static final String FETCH_ORDER_DETAILS_END_POINT = BuildConfig.BASE_URL + "api/auth/viewOrder";

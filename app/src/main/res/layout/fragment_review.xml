@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.mamits.citymatic.viewmodel.fragment.ReviewViewModel" />
+
+        <variable
+            name="isMyReview"
+            type="Boolean" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_15sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/_44sdp"
+                android:layout_height="@dimen/_44sdp"
+                android:src="@drawable/back_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mamits.citymatic.ui.customviews.CustomTextView
+                android:id="@+id/txt_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:includeFontPadding="false"
+                android:singleLine="true"
+                android:text="Testimonials"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp"
+                app:fontName="Poppins-Medium.ttf"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_back"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_my_review"
+                android:layout_width="@dimen/_140sdp"
+                android:layout_height="@dimen/_48sdp"
+                android:layout_gravity="end"
+                android:visibility="@{isMyReview ? View.GONE : View.VISIBLE}"
+                app:cardBackgroundColor="@color/black"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="My Reviews"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll_del_edit"
+            android:layout_below="@id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="13"
+            tools:listitem="@layout/review_item_list"
+            tools:visibility="visible" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_512sdp"
+            android:layout_alignTop="@id/recycler_review"
+            tools:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/reviews_shimmer" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_del_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_post"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal"
+            tools:visibility="visible">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_delete"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_58sdp"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:strokeColor="@color/black"
+                app:strokeWidth="@dimen/_1sdp"
+                app:cardCornerRadius="@dimen/_5sdp"
+                tools:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_24sdp"
+                        android:layout_height="@dimen/_24sdp"
+                        android:src="@drawable/delete"
+                        app:tint="@color/black" />
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:includeFontPadding="false"
+                        android:text="Delete"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btn_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_58sdp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/color_orange"
+                app:cardCornerRadius="@dimen/_5sdp"
+                tools:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:src="@drawable/edit"
+                        app:tint="@color/white" />
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:includeFontPadding="false"
+                        android:text="Edit"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_12ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btn_post"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_58sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/black"
+            app:cardCornerRadius="@dimen/_5sdp"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:src="@drawable/camera_icon" />
+
+                <com.mamits.citymatic.ui.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:includeFontPadding="false"
+                    android:text="Post a review"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp"
+                    app:fontName="Poppins-Regular.ttf" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+
+</layout>

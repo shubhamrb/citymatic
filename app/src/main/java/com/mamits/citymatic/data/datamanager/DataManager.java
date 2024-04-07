@@ -140,8 +140,23 @@ public class DataManager implements IDataManager {
     }
 
     @Override
+    public void fetchPublicReviews(Activity activity, String accessToken, ResponseListener responseListener) {
+        mApiHelper.fetchPublicReviews(activity, accessToken, responseListener);
+    }
+
+    @Override
+    public void fetchMyReviews(Activity activity, String accessToken, ResponseListener responseListener) {
+        mApiHelper.fetchMyReviews(activity, accessToken, responseListener);
+    }
+
+    @Override
     public void setDefaultAddress(Activity activity, String accessToken, int id, ResponseListener responseListener) {
         mApiHelper.setDefaultAddress(activity, accessToken, id, responseListener);
+    }
+
+    @Override
+    public void deleteReview(Activity activity, String accessToken, int id, ResponseListener responseListener) {
+        mApiHelper.deleteReview(activity, accessToken, id, responseListener);
     }
 
     @Override
@@ -239,11 +254,6 @@ public class DataManager implements IDataManager {
     @Override
     public void fetchMessage(Activity mActivity, String accessToken, JSONObject jsonObject, ResponseListener responseListener) {
         mApiHelper.fetchMessage(mActivity, accessToken, jsonObject, responseListener);
-    }
-
-    @Override
-    public void sendMessage(Activity mActivity, String accessToken, int user_id, int order_id, String message, File uploadedFile, ResponseListener responseListener) {
-        mApiHelper.sendMessage(mActivity, accessToken, user_id, order_id, message, uploadedFile, responseListener);
     }
 
     @Override

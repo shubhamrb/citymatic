@@ -53,7 +53,13 @@ public interface IApiHelper {
 
     void fetchAddresses(Activity activity, String accessToken, String type, ResponseListener responseListener);
 
+    void fetchPublicReviews(Activity activity, String accessToken, ResponseListener responseListener);
+
+    void fetchMyReviews(Activity activity, String accessToken, ResponseListener responseListener);
+
     void setDefaultAddress(Activity activity, String accessToken, int id, ResponseListener responseListener);
+
+    void deleteReview(Activity activity, String accessToken, int id, ResponseListener responseListener);
 
     void removeCartItem(Activity activity, String accessToken, JSONObject jsonObject, ResponseListener responseListener);
 
@@ -92,8 +98,6 @@ public interface IApiHelper {
     void fetchServicesByStore(Activity activity, String accessToken, int cat_id, int store_id, ResponseListener responseListener);
 
     void fetchMessage(Activity mActivity, String accessToken, JSONObject jsonObject, ResponseListener responseListener);
-
-    void sendMessage(Activity mActivity, String accessToken, int user_id, int order_id, String message, File uploadedFile, ResponseListener responseListener);
 
     void fetchCfsToken(Activity mActivity, String accessToken, String orderId, String amount, ResponseListener responseListener);
 

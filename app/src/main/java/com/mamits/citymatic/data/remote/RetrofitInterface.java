@@ -14,6 +14,7 @@ import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Query;
 import retrofit2.http.Url;
 
 public interface RetrofitInterface {
@@ -75,8 +76,20 @@ public interface RetrofitInterface {
     Call<JsonObject> fetchAddresses(@Header("Authorization") String accessToken, @Body String jsonObject);
 
     @Headers("Content-Type: application/json")
+    @GET(ApiConstant.FETCH_PUBLIC_REVIEWS_END_POINT)
+    Call<JsonObject> fetchPublicReviews(@Query("api_key") String jsonObject);
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.FETCH_MY_REVIEWS_END_POINT)
+    Call<JsonObject> fetchMyReviews(@Header("Authorization") String accessToken);
+
+    @Headers("Content-Type: application/json")
     @POST(ApiConstant.SET_DEFAULT_ADDRESS_END_POINT)
     Call<JsonObject> setDefaultAddress(@Header("Authorization") String accessToken, @Body String jsonObject);
+
+    @Headers("Content-Type: application/json")
+    @POST(ApiConstant.DELETE_REVIEW_END_POINT)
+    Call<JsonObject> deleteReview(@Header("Authorization") String accessToken, @Body String jsonObject);
 
     @Headers("Content-Type: application/json")
     @POST(ApiConstant.FETCH_BOOKING_DATES_END_POINT)
@@ -175,8 +188,8 @@ public interface RetrofitInterface {
     Call<JsonObject> fetchMessages(@Header("Authorization") String accessToken, @Body String jsonObject);
 
     @Multipart
-    @POST(ApiConstant.SEND_MESSAGE_END_POINT)
-    Call<JsonObject> sendMessages(@Header("Authorization") String accessToken, @Part("orderid") RequestBody orderid, @Part("vendorid") RequestBody userid, @Part("message") RequestBody message, @Part MultipartBody.Part chatfile);
+    @POST(ApiConstant.POST_REVIEW_END_POINT)
+    Call<JsonObject> sendMessages(@Header("Authorization") String accessToken, @Part("order_id") RequestBody orderid, @Part("service_id") RequestBody userid, @Part("rating") RequestBody message, @Part MultipartBody.Part chatfile);
 
     @Headers("Content-Type: application/json")
     @POST(ApiConstant.FETCH_CFSTOKEN_END_POINT)

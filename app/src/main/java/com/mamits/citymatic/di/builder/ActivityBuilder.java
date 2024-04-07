@@ -4,11 +4,11 @@ import com.mamits.citymatic.di.module.activity.AddAddressActivityModule;
 import com.mamits.citymatic.di.module.activity.DashboardActivityModule;
 import com.mamits.citymatic.di.module.activity.ForgotPasswordActivityModule;
 import com.mamits.citymatic.di.module.activity.LoginActivityModule;
-import com.mamits.citymatic.di.module.activity.MessageModule;
 import com.mamits.citymatic.di.module.activity.OtpActivityModule;
 import com.mamits.citymatic.di.module.activity.PaymentActivityModule;
 import com.mamits.citymatic.di.module.activity.RegisterActivityModule;
 import com.mamits.citymatic.di.module.activity.ResetPasswordModule;
+import com.mamits.citymatic.di.module.activity.VideoRecorderActivityModule;
 import com.mamits.citymatic.di.module.activity.WebViewActivityModule;
 import com.mamits.citymatic.di.module.fragment.AddressModule;
 import com.mamits.citymatic.di.module.fragment.AllSubcategoryFragmentModule;
@@ -20,7 +20,9 @@ import com.mamits.citymatic.di.module.fragment.HomeFragmentModule;
 import com.mamits.citymatic.di.module.fragment.NotificationFragmentModule;
 import com.mamits.citymatic.di.module.fragment.OrderDetailsModule;
 import com.mamits.citymatic.di.module.fragment.OrderSummaryModule;
+import com.mamits.citymatic.di.module.fragment.PostReviewModule;
 import com.mamits.citymatic.di.module.fragment.ProfileFragmentModule;
+import com.mamits.citymatic.di.module.fragment.ReviewModule;
 import com.mamits.citymatic.di.module.fragment.ScheduleFragmentModule;
 import com.mamits.citymatic.di.module.fragment.StoreDetailFragmentModule;
 import com.mamits.citymatic.di.scope.ActivityScope;
@@ -30,12 +32,12 @@ import com.mamits.citymatic.ui.activity.CouponsActivity;
 import com.mamits.citymatic.ui.activity.DashboardActivity;
 import com.mamits.citymatic.ui.activity.ForgotPasswordActivity;
 import com.mamits.citymatic.ui.activity.LoginActivity;
-import com.mamits.citymatic.ui.activity.MessageActivity;
 import com.mamits.citymatic.ui.activity.OtpActivity;
 import com.mamits.citymatic.ui.activity.PaymentActivity;
 import com.mamits.citymatic.ui.activity.RegisterActivity;
 import com.mamits.citymatic.ui.activity.ResetPasswordActivity;
 import com.mamits.citymatic.ui.activity.UpdateAddressActivity;
+import com.mamits.citymatic.ui.activity.VideoRecorderActivity;
 import com.mamits.citymatic.ui.activity.WebViewActivity;
 import com.mamits.citymatic.ui.fragment.AddressFragment;
 import com.mamits.citymatic.ui.fragment.AllSubcategoryFragment;
@@ -46,7 +48,9 @@ import com.mamits.citymatic.ui.fragment.HomeFragment;
 import com.mamits.citymatic.ui.fragment.NotificationFragment;
 import com.mamits.citymatic.ui.fragment.OrderDetailsFragment;
 import com.mamits.citymatic.ui.fragment.OrderSummaryFragment;
+import com.mamits.citymatic.ui.fragment.PostReviewFragment;
 import com.mamits.citymatic.ui.fragment.ProfileFragment;
+import com.mamits.citymatic.ui.fragment.ReviewFragment;
 import com.mamits.citymatic.ui.fragment.ScheduleBookingFragment;
 import com.mamits.citymatic.ui.fragment.StoreDetailFragment;
 import com.mamits.citymatic.ui.fragment.UpdateProfileFragment;
@@ -101,10 +105,6 @@ public abstract class ActivityBuilder {
     @FragmentScope
     abstract StoreDetailFragment bindStoreDetailFragment();
 
-    @ContributesAndroidInjector(modules = {MessageModule.class})
-    @ActivityScope
-    abstract MessageActivity bindMessageActivity();
-
     @ContributesAndroidInjector(modules = {NotificationFragmentModule.class})
     @FragmentScope
     abstract NotificationFragment bindNotificationFragment();
@@ -157,4 +157,15 @@ public abstract class ActivityBuilder {
     @FragmentScope
     abstract AddressFragment bindAddressFragment();
 
+    @ContributesAndroidInjector(modules = {ReviewModule.class})
+    @FragmentScope
+    abstract ReviewFragment bindReviewFragment();
+
+    @ContributesAndroidInjector(modules = {PostReviewModule.class})
+    @FragmentScope
+    abstract PostReviewFragment bindPostReviewFragment();
+
+    @ContributesAndroidInjector(modules = {VideoRecorderActivityModule.class})
+    @ActivityScope
+    abstract VideoRecorderActivity bindVideoRecorderActivity();
 }

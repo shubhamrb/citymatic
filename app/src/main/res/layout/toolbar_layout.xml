@@ -66,6 +66,7 @@
                 android:background="@drawable/toolbar_username_background"
                 android:backgroundTint="@color/black"
                 android:padding="@dimen/_10sdp"
+                android:visibility="gone"
                 android:src="@drawable/search"
                 app:tint="@color/white" />
         </RelativeLayout>

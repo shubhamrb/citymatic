@@ -86,8 +86,18 @@ public class OrdersDataModel implements Serializable {
     @SerializedName("completed_at")
     String completed_at;
 
+    Boolean selected;
+
     /*@SerializedName("assign_order")
     float assign_order;*/
+
+    public Boolean getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Boolean selected) {
+        this.selected = selected;
+    }
 
     public int getId() {
         return id;

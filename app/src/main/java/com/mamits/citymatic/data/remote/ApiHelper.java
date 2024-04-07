@@ -14,12 +14,9 @@ import com.mamits.citymatic.ui.utils.listeners.StringResponseListener;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -442,6 +439,44 @@ public class ApiHelper implements IApiHelper {
     }
 
     @Override
+    public void fetchPublicReviews(Activity activity, String accessToken, ResponseListener responseListener) {
+        RetrofitInterface call = new RetrofitBase(activity, true).retrofit.create(RetrofitInterface.class);
+
+        call.fetchPublicReviews(AppConstant.API_KEY).enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(@NonNull Call<JsonObject> call, @NonNull Response<JsonObject> response) {
+                if (response.body() != null) {
+                    responseListener.onSuccess(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<JsonObject> call, @NonNull Throwable t) {
+                responseListener.onFailed(t);
+            }
+        });
+    }
+
+    @Override
+    public void fetchMyReviews(Activity activity, String accessToken, ResponseListener responseListener) {
+        RetrofitInterface call = new RetrofitBase(activity, true).retrofit.create(RetrofitInterface.class);
+
+        call.fetchMyReviews("Bearer " + accessToken).enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(@NonNull Call<JsonObject> call, @NonNull Response<JsonObject> response) {
+                if (response.body() != null) {
+                    responseListener.onSuccess(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<JsonObject> call, @NonNull Throwable t) {
+                responseListener.onFailed(t);
+            }
+        });
+    }
+
+    @Override
     public void setDefaultAddress(Activity activity, String accessToken, int id, ResponseListener responseListener) {
         RetrofitInterface call = new RetrofitBase(activity, true).retrofit.create(RetrofitInterface.class);
         JSONObject jsonObject = new JSONObject();
@@ -451,6 +486,30 @@ public class ApiHelper implements IApiHelper {
             e.printStackTrace();
         }
         call.setDefaultAddress("Bearer " + accessToken, jsonObject.toString()).enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(@NonNull Call<JsonObject> call, @NonNull Response<JsonObject> response) {
+                if (response.body() != null) {
+                    responseListener.onSuccess(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<JsonObject> call, @NonNull Throwable t) {
+                responseListener.onFailed(t);
+            }
+        });
+    }
+
+    @Override
+    public void deleteReview(Activity activity, String accessToken, int id, ResponseListener responseListener) {
+        RetrofitInterface call = new RetrofitBase(activity, true).retrofit.create(RetrofitInterface.class);
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("rattingid", id);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        call.deleteReview("Bearer " + accessToken, jsonObject.toString()).enqueue(new Callback<JsonObject>() {
             @Override
             public void onResponse(@NonNull Call<JsonObject> call, @NonNull Response<JsonObject> response) {
                 if (response.body() != null) {
@@ -875,23 +934,11 @@ public class ApiHelper implements IApiHelper {
         });
     }
 
-    @Override
-    public void sendMessage(Activity mActivity, String accessToken, int user_id, int order_id, String message, File uploadedFile, ResponseListener responseListener) {
+    public void postReview(Activity mActivity, String accessToken, RequestBody order_id, RequestBody service_id, RequestBody rating, MultipartBody.Part uploadedFile, ResponseListener responseListener) {
         RetrofitInterface call = new RetrofitBase(mActivity, true).retrofit.create(RetrofitInterface.class);
 
         try {
-            MultipartBody.Part requestImage = null;
-            if (uploadedFile != null) {
-                RequestBody requestFile = RequestBody.create(MediaType.parse("mutlipart/form-data"), uploadedFile);
-                requestImage = MultipartBody.Part.createFormData("chatfile", uploadedFile.getName(), requestFile);
-            }
-
-
-            RequestBody vendorid = RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(order_id));
-            RequestBody userid = RequestBody.create(MediaType.parse("multipart/form-data"), String.valueOf(user_id));
-            RequestBody msg = RequestBody.create(MediaType.parse("multipart/form-data"), message);
-
-            call.sendMessages("Bearer " + accessToken, vendorid, userid, msg, requestImage).enqueue(new Callback<JsonObject>() {
+            call.sendMessages("Bearer " + accessToken, order_id, service_id, rating, uploadedFile).enqueue(new Callback<JsonObject>() {
                 @Override
                 public void onResponse(@NonNull Call<JsonObject> call, @NonNull Response<JsonObject> response) {
                     if (response.body() != null) {

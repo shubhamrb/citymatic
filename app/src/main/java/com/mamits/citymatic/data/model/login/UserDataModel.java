@@ -17,11 +17,22 @@ public class UserDataModel implements Serializable {
     @SerializedName("email")
     private String email;
 
+    @SerializedName("profile_image")
+    private String profile_image;
+
     @SerializedName("IsVerify")
     private int IsVerify;
 
     @SerializedName("IsActive")
     private int IsActive;
+
+    public String getProfile_image() {
+        return profile_image;
+    }
+
+    public void setProfile_image(String profile_image) {
+        this.profile_image = profile_image;
+    }
 
     public String getEmail() {
         return email;
@@ -73,11 +84,12 @@ public class UserDataModel implements Serializable {
 
     @Override
     public String toString() {
-        return "UserDataModel{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", Phone='" + Phone + '\'' +
                 ", email='" + email + '\'' +
+                ", profile_image='" + profile_image + '\'' +
                 ", IsVerify=" + IsVerify +
                 ", IsActive=" + IsActive +
                 '}';

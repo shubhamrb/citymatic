@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mcv_root"
+    android:layout_width="@dimen/_300sdp"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_vertical"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/dimen_0dp"
+    app:contentPadding="@dimen/_15sdp"
+    app:strokeColor="@color/dim_gray"
+    app:strokeWidth="0.5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/default_card"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/dimen_0dp"
+            app:layout_constraintBottom_toTopOf="@+id/cl_user_data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_user_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/img_person_card"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_41sdp"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_person"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/ColorD9D9D9"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/poster" />
+            </androidx.cardview.widget.CardView>
+
+            <com.mamits.citymatic.ui.customviews.CustomTextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:includeFontPadding="false"
+                tools:text="Service Vendor"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11ssp"
+                app:fontName="Poppins-Regular.ttf"
+                app:layout_constraintStart_toEndOf="@id/img_person_card"
+                app:layout_constraintTop_toTopOf="@id/img_person_card" />
+
+            <com.mamits.citymatic.ui.customviews.CustomTextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:alpha="0.5"
+                android:includeFontPadding="false"
+                tools:text="Posted on 21 Aug, 2023"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8ssp"
+                app:fontName="Poppins-Regular.ttf"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/img_person_card"
+                app:layout_constraintTop_toBottomOf="@id/txt_name" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                app:cardCornerRadius="@dimen/_5sdp"
+                app:cardElevation="@dimen/dimen_0dp"
+                app:contentPadding="@dimen/_5sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/star"
+                        app:tint="@color/color_orange" />
+
+                    <com.mamits.citymatic.ui.customviews.CustomTextView
+                        android:id="@+id/txt_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:layout_marginEnd="@dimen/_3sdp"
+                        android:includeFontPadding="false"
+                        tools:text="4.5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10ssp"
+                        app:fontName="Poppins-Regular.ttf" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
